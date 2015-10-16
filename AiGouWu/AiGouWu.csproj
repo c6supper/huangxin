@@ -614,8 +614,11 @@
     <Content Include="images\detail_bg.png" />
     <Content Include="images\detail_r4_titleline.gif" />
     <Content Include="images\go_back.gif" />
+    <Content Include="images\gsyh.jpg" />
     <Content Include="images\ico_stars.gif" />
     <Content Include="images\jieshuan.png" />
+    <Content Include="images\jsyh.jpg" />
+    <Content Include="images\jtyh.jpg" />
     <Content Include="images\list_buy.gif" />
     <Content Include="images\list_collect.gif" />
     <Content Include="images\list_detail.gif" />
@@ -628,13 +631,10 @@
     <Content Include="images\logo.png" />
     <Content Include="images\navNew.gif" />
     <Content Include="images\novice.gif" />
-    <Content Include="images\上海普东银行.jpg" />
-    <Content Include="images\中国农业银行.jpg" />
-    <Content Include="images\中国工商银行.jpg" />
-    <Content Include="images\中国建设银行.jpg" />
-    <Content Include="images\交通银行.jpg" />
     <Content Include="images\bank.jpg" />
     <Content Include="greybox\Login.aspx" />
+    <Content Include="images\nyyh.jpg" />
+    <Content Include="images\shpdyh.jpg" />
     <Content Include="NewsAutoSearch.asmx" />
     <Content Include="OdersDetail.aspx" />
     <Content Include="PayWay.aspx" />

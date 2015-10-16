@@ -14,7 +14,7 @@ namespace AiGouWu.Admin.Products
        
         protected void Page_Load(object sender, EventArgs e)
         {
-           this.rptClassList.DataSource= comm.getDataByCondition("proType", "*", " 1=1 ");
+           this.rptClassList.DataSource = comm.getDataByCondition("proType", "*", " 1=1 ");
            this.rptClassList.DataBind();
         }
 
@@ -25,7 +25,19 @@ namespace AiGouWu.Admin.Products
             if (e.CommandName == "btndel")
             {
                 string id = e.CommandArgument.ToString();
-                //修改当前编号的状态
+
+                var dt = comm.getDataByCondition("proType", "*", " ParentId=" + id);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "", "alert('请先删除子类别')", true);
+                }
+                else
+                {
+                    comm.DeleteByCondition("proType", " where id=" + id);
+                }
+
+                Page_Load(null,null);
             }
         }
      

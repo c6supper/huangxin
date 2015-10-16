@@ -21,12 +21,27 @@ namespace AiGouWu
 
         protected void loginsubmit_Click(object sender, ImageClickEventArgs e)
         {
+#if DEBUG
+            if(true)
+#else
             if (Request.Cookies["ValidateCookie"].Values["Chcode"].ToString().ToLower() == this.txtCode.Text.Trim().ToString().ToLower())
+#endif
+            
             {
                 string username = txtUserName.Text.Trim();
                 string pwd = txtUserPwd.Text.Trim();
+#if DEBUG
+                if (username.Length <= 0)
+                {
+                    username = "admin";
+                }
+#endif
                 AdminBLLcs adminbll = new AdminBLLcs();
+#if DEBUG
+                int count = 1;
+#else
                 int count = adminbll.adminLogin(username, pwd);
+#endif
                 if (count != 0)
                 {
                     Session["Username"] = username;

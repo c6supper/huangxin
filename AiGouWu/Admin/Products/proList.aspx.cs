@@ -77,17 +77,16 @@ namespace AiGouWu.Admin.Products
         //删除
         protected void lbtnDel_Click(object sender, EventArgs e)
         {
-
             for (int i = 0; i < rptList.Items.Count; i++)
             {
                 CheckBox cb = (CheckBox)rptList.Items[i].FindControl("cb_id");
                 if (cb.Checked)
                 {
-                Label lbid= (Label)rptList.Items[i].FindControl("lbID");
-                comm.DeleteByCondition("tbProduct", " where product_id=" + lbid.Text);
+                    Label lbid= (Label)rptList.Items[i].FindControl("lbID");
+                    comm.DeleteByCondition("tbProduct", " where product_id=" + lbid.Text);
                 }
             }
-          
+            getprosList();
         }
 
         protected void AspNetPager1_PageChanged(object sender, EventArgs e)
